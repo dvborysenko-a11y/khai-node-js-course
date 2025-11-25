@@ -2,6 +2,8 @@ const express = require('express');
 
 const app = express();
 
+const port = 3000;
+
 // handle get request
 app.get('/', (request, response) => {
   // send back a response in plain text
