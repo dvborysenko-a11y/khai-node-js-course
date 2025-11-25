@@ -11,4 +11,4 @@ app.get('/', (request, response) => {
 });
 
 // start the server
-app.listen(3000, () => console.log(`server start at http://localhost:${port}/`));
+app.listen(port, () => console.log(`server start at http://localhost:${port}/`));
