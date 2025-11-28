@@ -10,12 +10,12 @@ router.get('/products', (request, response) => {
 
 // handle get request for path /products/:brand
 router.get('/products/:brand', (request, response) => {
-   const { brand } = req.params; // Access the brand parameter from the URL
+   const { brand } = request.params; // Access the brand parameter from the URL
 
    // Filter products based on the brand parameter
    const filteredProducts = products.filter(product => product.brand === brand);
 
-   res.json(filteredProducts); // Send the filtered products as a JSON response
+   response.json(filteredProducts); // Send the filtered products as a JSON response
 });
 
 module.exports = router;
