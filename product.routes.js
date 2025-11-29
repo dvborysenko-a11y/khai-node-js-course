@@ -19,4 +19,10 @@ router.get('/products/:brand', blockSpecialBrand, (request, response) => {
    response.json(filteredProducts); // Send the filtered products as a JSON response
 });
 
+router.get('/productswitherror', (request, response) => {
+   let err = new Error("processing error ")
+   err.statusCode = 400
+   throw err
+});
+
 module.exports = router;
