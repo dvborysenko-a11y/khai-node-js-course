@@ -9,6 +9,20 @@ router.get('/products', (request, response) => {
    return response.json(products);
 });
 
+router.get('/products/id/:id', (request, response) => {
+   const id = Number(request.params.id);
+   if (Number.isNaN(id)) {
+      return response.status(400).json({ error: 'Invalid id' });
+   }
+
+   const product = products.find(p => p.id === id);
+   if (!product) {
+      return response.status(404).json({ error: 'Product not found' });
+   }
+
+   return response.json(product);
+});
+
 // handle get request for path /products/:brand
 router.get('/products/:brand', blockSpecialBrand, (request, response) => {
    const { brand } = request.params; // Access the brand parameter from the URL
