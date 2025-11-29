@@ -1,5 +1,6 @@
 const express = require('express');
 const products = require('./products');
+const { blockSpecialBrand } = require('./middleware');
 
 const router = express.Router();
 
@@ -9,7 +10,7 @@ router.get('/products', (request, response) => {
 });
 
 // handle get request for path /products/:brand
-router.get('/products/:brand', (request, response) => {
+router.get('/products/:brand', blockSpecialBrand, (request, response) => {
    const { brand } = request.params; // Access the brand parameter from the URL
 
    // Filter products based on the brand parameter
