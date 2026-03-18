@@ -1,6 +1,7 @@
 export default {
    schema: './src/db/schema.js',
    out: './drizzle',
+   driver: "pg",
    dialect: 'postgresql',
    dbCredentials: {
        host: '127.0.0.1',
