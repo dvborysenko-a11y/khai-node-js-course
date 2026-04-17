@@ -10,4 +10,10 @@ router.post('/users', async (request, response) => {
    return response.sendStatus(201);
 });
 
+// handle get request for path /users
+router.get('/users', async (request, response) => {
+   const users = await db.query.users.findMany();
+   return response.json(users);
+});
+
 module.exports = router;
