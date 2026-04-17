@@ -21,6 +21,7 @@
     "migration:push": "drizzle-kit push:pg"
   },
   "dependencies": {
+    "body-parser": "^2.2.2",
     "drizzle-orm": "^0.45.2",
     "express": "^5.1.0",
     "pg": "^8.20.0"

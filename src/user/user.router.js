@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-// handle get request for path /users
-router.get('/users', (request, response) => {
+// handle post request for path /users
+router.post('/users', (request, response) => {
+   console.log(request.body)
    return response.json({ route: 'get-users' });
 });
 
