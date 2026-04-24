@@ -9,4 +9,10 @@ router.post('/products', async (request, response) => {
    return response.sendStatus(201);
 });
 
+// handle get request for path /products
+router.get('/products', async (request, response) => {
+   const allProducts = await db.query.products.findMany();
+   return response.json(allProducts);
+});
+
 module.exports = router;
